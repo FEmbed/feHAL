@@ -1,0 +1,4 @@
+libraries:
+    feHAL:
+      - records/{vendor}/Common.yaml
+      
