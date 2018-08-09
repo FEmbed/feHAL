@@ -1,4 +1,9 @@
-libraries:
-    feHAL:
-      - records/{vendor}/Common.yaml
-      
+name: feHAL
+type: src
+files:
+    includes:
+        HAL:
+        - ${vendor}/${chip_series}/Inc
+properties:
+    vendor: ST
+    chip_series: STM32F4xx
