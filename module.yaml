@@ -3,7 +3,10 @@ type: src
 files:
     includes:
         HAL:
-        - ${vendor}/${chip_series}/Inc
+        - ${vendor}/${chip_series}_HAL_Driver/Inc
+    sources:
+        HAL:
+        - ${vendor}/${chip_series}_HAL_Driver/Src
 properties:
     vendor: ST
     chip_series: STM32F4xx
