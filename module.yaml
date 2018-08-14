@@ -7,6 +7,9 @@ files:
     sources:
         HAL:
         - ${vendor}/${chip_series}_HAL_Driver/Src
+portable:
+    config:
+    - ${vendor}/stm32_assert.template
 properties:
     vendor: ST
     chip_series: STM32F4xx
