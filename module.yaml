@@ -10,6 +10,9 @@ files:
 portable:
     config:
     - ${vendor}/portable/stm32_assert.template
+    - ${vendor}/portable/${chip_series}
+    port:
+    - ${vendor}/portable/${chip_series}
 properties:
     vendor: ST
     chip_series: STM32F4xx
