@@ -1,0 +1,43 @@
+choice
+    prompt "Target Chip Serials Selected"    
+    default CHIP_SERIES_STM32F4
+    
+config CHIP_SERIES_STM32F0
+    bool "STM32F0xx"
+
+config CHIP_SERIES_STM32L0
+    bool "STM32L0xx"
+
+config CHIP_SERIES_STM32F1
+    bool "STM32F1xx"
+
+config CHIP_SERIES_STM32L1
+    bool "STM32L1xx"
+
+config CHIP_SERIES_STM32F2
+    bool "STM32F2xx"
+
+config CHIP_SERIES_STM32F3
+    bool "STM32F3xx"
+
+config CHIP_SERIES_STM32F4
+    bool "STM32F4xx"
+
+config CHIP_SERIES_STM32L4
+    bool "STM32L4xx"
+
+config CHIP_SERIES_STM32F7
+    bool "STM32F7xx"
+endchoice
+
+config CHIP_SERIES
+    string
+    default "STM32F0xx"  if CHIP_SERIES_STM32F0
+    default "STM32L0xx"  if CHIP_SERIES_STM32L0
+    default "STM32F1xx"  if CHIP_SERIES_STM32F1
+    default "STM32L1xx"  if CHIP_SERIES_STM32L1
+    default "STM32F2xx"  if CHIP_SERIES_STM32F2
+    default "STM32F3xx"  if CHIP_SERIES_STM32F3
+    default "STM32F4xx"  if CHIP_SERIES_STM32F4
+    default "STM32L4xx"  if CHIP_SERIES_STM32L4
+    default "STM32F7xx"  if CHIP_SERIES_STM32F7
