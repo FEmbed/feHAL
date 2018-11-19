@@ -1,33 +1,47 @@
 choice
     prompt "Target Chip Serials Selected"    
-    default CHIP_SERIES_STM32F4
-    
+    default CHIP_SERIES_STM32F0 if ARM_CORTEX_M0
+    default CHIP_SERIES_STM32F1 if ARM_CORTEX_M1
+    default CHIP_SERIES_STM32F2 if ARM_CORTEX_M3
+    default CHIP_SERIES_STM32F4 if ARM_CORTEX_M4
+    default CHIP_SERIES_STM32F7 if ARM_CORTEX_M7
+
 config CHIP_SERIES_STM32F0
     bool "STM32F0xx"
+    depends on ARM_CORTEX_M0
 
 config CHIP_SERIES_STM32L0
     bool "STM32L0xx"
+    depends on ARM_CORTEX_M0
 
 config CHIP_SERIES_STM32F1
     bool "STM32F1xx"
+    depends on ARM_CORTEX_M1
 
 config CHIP_SERIES_STM32L1
     bool "STM32L1xx"
+    depends on ARM_CORTEX_M1
 
 config CHIP_SERIES_STM32F2
     bool "STM32F2xx"
+    depends on ARM_CORTEX_M3
 
 config CHIP_SERIES_STM32F3
     bool "STM32F3xx"
+    depends on ARM_CORTEX_M3
 
 config CHIP_SERIES_STM32F4
     bool "STM32F4xx"
+    depends on ARM_CORTEX_M4
 
 config CHIP_SERIES_STM32L4
     bool "STM32L4xx"
+    depends on ARM_CORTEX_M4
 
 config CHIP_SERIES_STM32F7
     bool "STM32F7xx"
+    depends on ARM_CORTEX_M7
+
 endchoice
 
 config CHIP_SERIES
@@ -41,15 +55,3 @@ config CHIP_SERIES
     default "STM32F4xx"  if CHIP_SERIES_STM32F4
     default "STM32L4xx"  if CHIP_SERIES_STM32L4
     default "STM32F7xx"  if CHIP_SERIES_STM32F7
-
-config MCU
-    string
-    default "cortex-m0"  if CHIP_SERIES_STM32F0
-    default "cortex-m0"  if CHIP_SERIES_STM32L0
-    default "cortex-m1"  if CHIP_SERIES_STM32F1
-    default "cortex-m1"  if CHIP_SERIES_STM32L1
-    default "cortex-m3"  if CHIP_SERIES_STM32F2
-    default "cortex-m3"  if CHIP_SERIES_STM32F3
-    default "cortex-m4"  if CHIP_SERIES_STM32F4
-    default "cortex-m4"  if CHIP_SERIES_STM32L4
-    default "cortex-m7"  if CHIP_SERIES_STM32F7
