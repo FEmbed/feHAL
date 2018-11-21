@@ -59,3 +59,17 @@ config CHIP_SERIES
 config CCMRAM
     bool "Enable CCMRAM"
     default y if CHIP_SERIES_STM32F4
+
+choice
+    prompt "Main Clock Source"
+    default MAIN_CLK_HSI
+
+    config MAIN_CLK_HSI
+        bool "HSI"
+    config MAIN_CLK_HSE_8M
+        bool "HSE 8MHz"
+endchoice
+
+config MAIN_CLK_FREQ
+    int
+    default 8000000 if MAIN_CLK_HSE_8M
