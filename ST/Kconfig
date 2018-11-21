@@ -55,3 +55,7 @@ config CHIP_SERIES
     default "STM32F4xx"  if CHIP_SERIES_STM32F4
     default "STM32L4xx"  if CHIP_SERIES_STM32L4
     default "STM32F7xx"  if CHIP_SERIES_STM32F7
+
+config CCMRAM
+    bool "Enable CCMRAM"
+    default y if CHIP_SERIES_STM32F4
