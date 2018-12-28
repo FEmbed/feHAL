@@ -105,7 +105,11 @@
   *        (when HSE is used as system clock source, directly or through the PLL).  
   */
 #if !defined  (HSE_VALUE) 
+#ifdef CONFIG_MAIN_CLK_FREQ
   #define HSE_VALUE              CONFIG_MAIN_CLK_FREQ /*!< Value of the External oscillator in Hz */
+#else
+  #define HSE_VALUE              8000000
+#endif
 #endif /* HSE_VALUE */
 
 #if !defined  (HSE_STARTUP_TIMEOUT)
