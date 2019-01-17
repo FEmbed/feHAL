@@ -71,6 +71,7 @@
   */
 void HAL_MspInit(void)
 { 
+  #error "Please set target Clock in feHAL/xx/xx_hal_msp.c"
 }
 
 /**
