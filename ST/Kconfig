@@ -73,3 +73,7 @@ endchoice
 config MAIN_CLK_FREQ
     int
     default 8000000 if MAIN_CLK_HSE_8M
+
+config FULL_ASSERT
+    bool "USE_FULL_ASSERT"
+    default n
