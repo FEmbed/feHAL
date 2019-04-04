@@ -1,5 +1,6 @@
 # Global project config
-ifqe ($(CONFIG_FULL_ASSERT),y)
+
+ifeq ($(CONFIG_FULL_ASSERT),y)
 CPPFLAGS += -DUSE_FULL_ASSERT=1
 endif
 
